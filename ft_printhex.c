@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 14:37:02 by fsolomon          #+#    #+#             */
-/*   Updated: 2024/05/30 23:02:36 by fsolomon         ###   ########.fr       */
+/*   Created: 2024/05/30 17:57:53 by fsolomon          #+#    #+#             */
+/*   Updated: 2024/05/30 18:18:34 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int ft_print_hex(unsigned int num, int *count, int text_case)
+{
+	char *symbol;
 
-//remove later!!!
-# include <stdio.h>
-
-int	ft_printf(const char *str, ...);
-int	ft_putchar(char c, int *count);
-int ft_putstr(char *str, int *count);
-int	ft_putnbr(int num, int *count);
-int	ft_unsigned(unsigned int num, int *count);
-int ft_print_hex(unsigned int num, int *count, int text_case);
-
-#endif
+	if (text_case == 0)
+		symbol = "0123456789abcdef";
+	else if (text_case == 1)
+		symbol = "0123456789ABCDEF";
+	if (num >= 16)
+	{
+		ft_print_hex(num / 16, count, text_case);
+	}
+	ft_putchar(symbol[num % 16], count);
+	return (*count);
+}
