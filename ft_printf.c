@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:40:44 by fsolomon          #+#    #+#             */
-/*   Updated: 2024/05/31 17:22:34 by fsolomon         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:37:56 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int check_format(va_list args, const char *str, int *count)
 	if (*str == 'c')
 		return (ft_putchar(va_arg(args, int), count));
 	else if (*str == 's')
-		return (ft_putstr(va_arg(args, char*), count));
+		return (ft_putstr(va_arg(args, char *), count));
 	else if (*str == 'd' || *str == 'i')
 		return (ft_putnbr(va_arg(args, int), count));
 	else if (*str == 'u')
@@ -48,18 +48,18 @@ static int scan_str(va_list args, const char *str, int *count)
 	}
 	return (0);
 }
-int    ft_printf(const char *str, ...)
- {
-	int	count;
+int ft_printf(const char *str, ...)
+{
+	int count;
 	va_list args;
-	
+
 	va_start(args, str);
 	count = 0;
-	if(scan_str(args, str, &count) == -1)
+	if (scan_str(args, str, &count) == -1)
 		return (-1);
 	va_end(args);
 	return (count);
- }
+}
 
 /* int main (void)
 {
