@@ -6,7 +6,7 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:37:02 by fsolomon          #+#    #+#             */
-/*   Updated: 2024/05/29 18:39:29 by fsolomon         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:21:39 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int	ft_putchar(char c, int *count);
 int ft_putstr(char *str, int *count);
 int	ft_putnbr(int num, int *count);
 int	ft_unsigned(unsigned int num, int *count);
+int	ft_print_hex(unsigned int num, int *count, int text_case);
+int ft_print_ptr(unsigned long int ptr, int *count);
 
 #endif
