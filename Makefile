@@ -6,7 +6,7 @@
 #    By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/27 14:36:47 by fsolomon          #+#    #+#              #
-#    Updated: 2024/05/31 17:21:49 by fsolomon         ###   ########.fr        #
+#    Updated: 2024/06/07 16:13:54 by fsolomon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCES = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_unsigned.c ft_prin
 
 OBJECTS = $(SOURCES:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)

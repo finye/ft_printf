@@ -6,13 +6,13 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:31:47 by fsolomon          #+#    #+#             */
-/*   Updated: 2024/05/29 17:26:11 by fsolomon         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:12:49 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *str, int *count)
+int	ft_putstr(char *str, int *count)
 {
 	if (!str)
 	{
@@ -20,12 +20,11 @@ int ft_putstr(char *str, int *count)
 			return (-1);
 		return (*count);
 	}
-
 	while (*str)
 	{
 		if (ft_putchar(*str, count) == -1)
 			return (-1);
 		str++;
 	}
-	return (0);
+	return (*count);
 }

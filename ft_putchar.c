@@ -6,16 +6,16 @@
 /*   By: fsolomon <fsolomon@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 10:42:18 by fsolomon          #+#    #+#             */
-/*   Updated: 2024/05/28 11:26:48 by fsolomon         ###   ########.fr       */
+/*   Updated: 2024/06/07 16:11:11 by fsolomon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c , int *count)
+int	ft_putchar(char c, int *count)
 {
 	if (write(1, &c, 1) == -1)
 		return (-1);
 	(*count)++;
-	return (0);
+	return (*count);
 }
